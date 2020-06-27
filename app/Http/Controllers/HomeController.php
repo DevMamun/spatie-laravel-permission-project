@@ -27,9 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         // Role::create(['name' => 'writer']);
+
         // $permission = Permission::create(['name' => 'write post']);
 
-        // $permission = Permission::findById(1);
+        // $permission = Permission::findById(5);
         // $role = Role::findById(2);
         // $permission = Permission::findById(1);
 
@@ -49,7 +50,12 @@ class HomeController extends Controller
         // return User::permission('write post')->get();
 
         // return auth()->user()->removeRole('writer');
+        // $user = User::findOrFail(4);
+        // $user->givePermissionTo('publish post');
+        // $user->assignRole('admin');
 
+        // $role = Role::findById(6);
+        // $role->givePermissionTo('edit post');
 
         return view('home');
     }

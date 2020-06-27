@@ -7,7 +7,9 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
                     <span>All Posts</span>
-                    <a href="#">Add Post</a>
+                    @role('writer|admin')
+                        <a href="{{ route('post.create') }}">Add Post</a>
+                    @endrole
                 </div>
                 <div class="card-body">
                     <ul>
@@ -18,7 +20,9 @@
                                         {{ $data->title }}
                                     </h5>
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                @role('editor|admin')
+                                <a href="{{ route('post.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                @endrole
                             </li>
                         @endforeach
                     </ul>
