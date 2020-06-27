@@ -20,9 +20,9 @@
                                         {{ $data->title }}
                                     </h5>
                                 </a>
-                                @role('editor|admin')
+                                @can('edit post')
                                 <a href="{{ route('post.edit', $data->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                @endrole
+                                @endcan
                             </li>
                         @endforeach
                     </ul>
